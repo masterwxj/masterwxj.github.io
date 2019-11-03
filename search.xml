@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>GDP是什么?</title>
+    <url>/2019/11/03/GDP%E6%98%AF%E4%BB%80%E4%B9%88/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Github Page 个人博客</title>
+    <url>/2019/11/03/Github%20Page%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>[TOC]</p>
+<h2 id="一、环境配置"><a href="#一、环境配置" class="headerlink" title="一、环境配置"></a>一、环境配置</h2><h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h3><p>登录<a href="https://github.com" target="_blank" rel="noopener">GitHub</a>， 注册一个账号。点击页面右上角<strong>+</strong>号，新建仓库 <em>New repository</em> ，仓库名称 <em>Repository name</em> 中输入 <em>yourname.github.io</em> ，创建仓库 <em>Create repository</em> 。</p>
+<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p>登录<a href="https://git-scm.com" target="_blank" rel="noopener">Git</a>，下载适用于当前操作系统的最新版本，并安装。安装过程中，建议勾选 <em>Windows Explorer integartion</em> 。安装完成后，右键我的电脑 -&gt; 属性 -&gt; 高级系统设置 -&gt; 环境变量 -&gt; 系统变量Path编辑，添加 <em>C:\Program Files\Git\cmd</em> 。</p>
+<p>打开命令行或Git Bash，输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"yourname"</span>`</span><br><span class="line">$ git config --global user.email <span class="string">"youremail@example.com"</span>`</span><br><span class="line">$ ssh-keygen -t rsa -C youremail@example.com`</span><br></pre></td></tr></table></figure>
+
+<p>在 <em>C:\Users\Yourname\.ssh</em> 中找到刚生成的id_rsa.pub文件，打开并复制其中的内容。登录Github，进入上一步新建的仓库 <em>yourname.github.io</em> ，然后点击 <em>Settings</em> -&gt; <em>Deploy keys</em> -&gt; <em>Add deploy key</em> 。粘贴刚刚复制的内容到 <em>key</em> 空白栏中，选中 <em>Allow write access</em> 添加新Key。</p>
+<h3 id="Nodejs"><a href="#Nodejs" class="headerlink" title="Nodejs"></a>Nodejs</h3><p>登录<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>， 下载最新版本并安装。安装后添加系统环境变量<em>C:\Program Files\nodejs\</em></p>
+<p>打开命令行中或Git Bash，输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v                        <span class="comment">#返回版本号，则安装成功</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Cmder"><a href="#Cmder" class="headerlink" title="Cmder"></a>Cmder</h3><p>C:\Program Files\cmder\</p>
+<h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><h2 id="二、Hexo-部署"><a href="#二、Hexo-部署" class="headerlink" title="二、Hexo 部署"></a>二、Hexo 部署</h2><h3 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h3><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>是一个快速、简洁且高效的静态博客框架，搭配GitHub和Typora使用可事半功倍。前期搭建好环境后，博客作者可以从网页技术中脱身出来，专注于文字内容的创作和思维逻辑的探索。</p>
+<p>在电脑的任意位置，新建一个文件夹，例如 <em>E:\Project\Blog</em> (下文简称为 <em>Blog文件夹</em> )。进入该文件夹，右键 <em>Cmder Here</em> ，输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli       <span class="comment">#安装hexo</span></span><br><span class="line">$ hexo -v                       <span class="comment">#返回版本号，则hexo安装成功</span></span><br><span class="line">$ hexo init [folder]            <span class="comment">#初始化， 未设置folder，默认在当前文件夹</span></span><br><span class="line">$ npm install                   <span class="comment">#npm自动安装所需的文件</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Hexo-配置"><a href="#Hexo-配置" class="headerlink" title="Hexo 配置"></a>Hexo 配置</h3><p>打开 <em>Blog文件夹</em> 目录下的 <em>_config.yml</em> 文件，做如下更改</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">XXX</span>                      <span class="comment">#网站标题</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">XXX</span>                <span class="comment">#网站描述</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">XXX</span>                     <span class="comment">#作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span>                 <span class="comment">#设置语言</span></span><br><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span>         <span class="comment">#新建文章时自动生成同名文件夹，方便管理相关资源</span></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span>                     <span class="comment">#设置主题</span></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span>                     <span class="comment">#配置deploy，采用SSH地址</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="string">git@github.com:yourname/yourname.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="NexT-配置"><a href="#NexT-配置" class="headerlink" title="NexT 配置"></a>NexT 配置</h3><p>NexT主题是Hexo的一个扩展主题，简洁易用。最初是由<a href="https://github.com/iissnan" target="_blank" rel="noopener">iissnan</a>开发的，现在由<a href="https://theme-next.org" target="_blank" rel="noopener">NexT社区</a>维护。最简单的安装方法就是，进入 <em>Blog文件夹</em> ，右键 <em>Cmder Here</em> ，输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p><strong>添加页面</strong><br>在Cmder中，输入命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags            <span class="comment">#添加标签页面</span></span><br><span class="line">$ <span class="comment">#hexo new page about          #添加关于页面</span></span><br><span class="line">$ <span class="comment">#hexo new categories          #添加分类页面</span></span><br></pre></td></tr></table></figure>
+
+<p>编辑 <em>Blog/source/</em> 文件夹下生成的相应的 <em>index.md</em> 文件</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">标签</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2019</span><span class="bullet">-11</span><span class="bullet">-04</span> <span class="number">04</span><span class="string">:40:31</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">"tags"</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>设置外观</strong><br>打开 <em>themes/next/</em> 目录下的 <em>_config.yml</em> 文件</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#shceme: Muse                   #大量留白</span></span><br><span class="line"><span class="attr">shceme:</span> <span class="string">Mist</span>                    <span class="comment">#紧凑有序</span></span><br><span class="line"><span class="comment">#scheme: Pisces                 #清新碧玉</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>设置菜单</strong></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="attr">  home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span>               <span class="comment">#主页</span></span><br><span class="line">  <span class="comment">#about: /about/ || user       #关于页面</span></span><br><span class="line"><span class="attr">  tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span>          <span class="comment">#标签页</span></span><br><span class="line">  <span class="comment">#categories: /categories/ || th</span></span><br><span class="line"><span class="attr">  archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span> <span class="comment">#归档页</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>设置侧栏</strong></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">sidebar:</span></span><br><span class="line"><span class="attr">  position:</span> <span class="string">right</span>               <span class="comment">#右侧</span></span><br><span class="line"><span class="attr">  display:</span> <span class="string">hide</span>                 <span class="comment">#隐藏，可手动展开</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>设置头像</strong></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">avatar:</span></span><br><span class="line"><span class="attr">  url:</span> <span class="string">/images/avatar.jpg</span>       <span class="comment">#头像图片置于相应位置</span></span><br><span class="line"><span class="attr">  rounded:</span> <span class="literal">true</span>                 <span class="comment">#圆角图标</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>社交链接</strong></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line"><span class="attr">  GitHub:</span> <span class="attr">https://github.com/yourname</span> <span class="string">||</span> <span class="string">github</span></span><br><span class="line"><span class="attr">  Weibo:</span> <span class="attr">https://weibo.com/yourname</span> <span class="string">||</span> <span class="string">weibo</span></span><br><span class="line"><span class="attr">github_banner:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span>                  <span class="comment">#开启GitHub右上角横幅</span></span><br><span class="line"><span class="attr">  permalink:</span> <span class="attr">https://github.com/yourname</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>设置打赏</strong></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">reward_settings:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  comment:</span> <span class="string">Donate</span> <span class="string">comment</span> <span class="string">here.</span></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line"><span class="attr">  wechatpay:</span> <span class="string">/images/wechatpay.png</span></span><br><span class="line"><span class="attr">  alipay:</span> <span class="string">/images/alipay.png</span></span><br><span class="line"><span class="attr">  bitcoin:</span> <span class="string">/images/bitcoin.png</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>设置脚注</strong></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">footer:</span></span><br><span class="line"><span class="attr">  since:</span> <span class="number">2019</span></span><br><span class="line"><span class="attr">  powered:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">false</span>               <span class="comment"># Hexo link (Powered by Hexo).</span></span><br><span class="line"><span class="attr">    version:</span> <span class="literal">false</span>              <span class="comment"># Version info of Hexo after Hexo link (vX.X.X).</span></span><br><span class="line"><span class="attr">  theme:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">false</span>               <span class="comment"># Theme &amp; scheme info link (Theme - NexT.scheme).</span></span><br><span class="line"><span class="attr">    version:</span> <span class="literal">false</span>              <span class="comment"># Version info of NexT after scheme info (vX.X.X).</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>阅读次数统计</strong></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  total_visitors:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  total_visitors_icon:</span> <span class="string">user</span></span><br><span class="line"><span class="attr">  total_views:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  total_views_icon:</span> <span class="string">eye</span></span><br><span class="line"><span class="attr">  post_views:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  post_views_icon:</span> <span class="string">eye</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>本地搜索</strong><br>进入 <em>Blog文件夹</em> ，右键 <em>Cmder Here</em> ，输入命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+
+<p>打开 <em>Blog文件夹</em> 下的 <em>_config.yml</em> 文件，添加如下内容</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">search.xml</span></span><br><span class="line"><span class="attr">  field:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">  format:</span> <span class="string">html</span></span><br><span class="line"><span class="attr">  limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+
+<p>编辑 <em>themes/next/</em> 目录下的 <em>_config.yml</em> 文件</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Hexo-体验"><a href="#Hexo-体验" class="headerlink" title="Hexo 体验"></a>Hexo 体验</h3><p>进入 <em>Blog文件夹</em> ，右键 <em>Cmder Here</em> ，输入命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate                 <span class="comment">#生成静态文件</span></span><br><span class="line">$ hexo server                   <span class="comment">#启用服务器</span></span><br></pre></td></tr></table></figure>
+
+<p>此时，在浏览器中输入 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 可在本地查看个人博客。</p>
+<p>写博客并发布文章，只需在 <em>Cmder</em> 中输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new post <span class="string">"article"</span>       <span class="comment">#新建一篇博文</span></span><br><span class="line">$ hexo clean                    <span class="comment">#清除缓存</span></span><br><span class="line">$ hexo generate                 <span class="comment">#生成静态文件</span></span><br><span class="line">$ hexo deploy                   <span class="comment">#部署网站至GitHub</span></span><br></pre></td></tr></table></figure>
+
+<p>至此，个人博客已成功建立，在浏览器中输入 <em>yourname.github.io</em> 即可查看。</p>
+<p>这下不能再拖了，得专心写文章了。</p>
+]]></content>
+      <tags>
+        <tag>Github</tag>
+        <tag>Hexo</tag>
+        <tag>Nodejs</tag>
+        <tag>Cmder</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/10/16/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
